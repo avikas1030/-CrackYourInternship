@@ -1,0 +1,19 @@
+//https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
+//CrakYourInternship Challenge
+class Solution
+{
+    public long findMinDiff (ArrayList<Integer> a, int n, int m)
+    {
+        int i = 0;
+        int j = (int)m-1;
+        int minimumDiff = Integer.MAX_VALUE;
+        Collections.sort(a);
+        
+        while(j < n){
+            minimumDiff = Math.min(minimumDiff, (a.get(j) - a.get(i)));
+            i++;
+            j++;
+        }
+        return minimumDiff;
+    }
+}
